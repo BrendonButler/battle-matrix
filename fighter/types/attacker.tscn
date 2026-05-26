@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://gdnwxxt6onk6"]
+
+[ext_resource type="PackedScene" uid="uid://cuq7dtbl3kgdh" path="res://fighter/fighter.tscn" id="1_b4m71"]
+[ext_resource type="Script" uid="uid://cit4kadnb3p1b" path="res://fighter/types/attacker.gd" id="2_ykxdc"]
+
+[node name="Defender" unique_id=324109447 instance=ExtResource("1_b4m71")]
+script = ExtResource("2_ykxdc")

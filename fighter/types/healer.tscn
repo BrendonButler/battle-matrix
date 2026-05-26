@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bkg7iakk2g247"]
+
+[ext_resource type="PackedScene" uid="uid://cuq7dtbl3kgdh" path="res://fighter/fighter.tscn" id="1_jq1y2"]
+[ext_resource type="Script" uid="uid://cps7w8ir0w4w" path="res://fighter/types/healer.gd" id="2_e06v6"]
+
+[node name="Healer" unique_id=324109447 instance=ExtResource("1_jq1y2")]
+script = ExtResource("2_e06v6")
