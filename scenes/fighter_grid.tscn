@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bb2qjluictl86"]
+
+[ext_resource type="Script" uid="uid://bdl5vjkhem7va" path="res://scenes/fighter_grid.gd" id="1_u3fyx"]
+
+[node name="FighterGrid" type="GridContainer" unique_id=2116829944]
+custom_minimum_size = Vector2(320, 320)
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 3
+script = ExtResource("1_u3fyx")

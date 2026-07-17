@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://wstkswd3mi7a"]
+
+[ext_resource type="Script" uid="uid://ci2t3wo2as8ug" path="res://scenes/fighter_cell.gd" id="1_7j3jw"]
+
+[node name="FighterCell" type="Control" unique_id=1640289522]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 3
+anchors_preset = 0
+mouse_default_cursor_shape = 2
+script = ExtResource("1_7j3jw")
+
+[node name="Background" type="Panel" parent="." unique_id=2137627392]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="Background2" type="ColorRect" parent="." unique_id=890525295]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="FighterSprite" type="TextureRect" parent="." unique_id=1098402381]
+layout_mode = 0
+
+[node name="HealthLabel" type="Label" parent="." unique_id=1640643853]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

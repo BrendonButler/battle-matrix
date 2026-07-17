@@ -2,7 +2,7 @@ extends Fighter
 
 class_name Attacker
 
-func _ready() -> void:
+func _init() -> void:
 	type = FighterType.ATTACKER
 	max_health = 12.0
 	health = max_health
