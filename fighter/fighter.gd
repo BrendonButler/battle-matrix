@@ -21,7 +21,12 @@ func take_damage(amount: float) -> void:
 
 @warning_ignore("unused_parameter")
 func act(allies: Array[Fighter], enemies: Array[Fighter]) -> void:
-	var target = enemies.filter(func(enemy): return enemy.is_alive).pick_random()
+	var targets = enemies.filter(func(enemy): return enemy.is_alive)
+	
+	if targets.size() <= 0:
+		return
+	
+	var target = targets.pick_random()
 	var damage = attack * (100.0 / (100.0 + target.defense))
 	
 	target.take_damage(damage)
