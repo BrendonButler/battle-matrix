@@ -22,16 +22,28 @@ func start_select() -> void:
 func get_cell(index: int) -> FighterCell:
 	return get_child(index) as FighterCell
 
+func get_fighters_in_line(line: int) -> Array[Fighter]:
+	var fighters: Array[Fighter] = []
+	
+	for fighter_cell in selected_lines[line]:
+		fighters.append(get_cell(fighter_cell).fighter)
+	
+	return fighters
+
 func select_line() -> Array:
 	if not select_start == select_end and selected_lines.size() < 3:
-		var selected_line = VALID_LINES.filter(func(line): return line.has(select_start) and line.has(select_end)).get(0)
+		var possible_lines = VALID_LINES.filter(func(line): return line.has(select_start) and line.has(select_end))
 		
-		if not selected_line == null and not selected_line.size() == 0:
-			if selected_lines.has(selected_line):
-				return []
-			
-			selected_lines.append(selected_line)
-			return selected_line
+		if possible_lines.size() <= 0:
+			return []
+		
+		var selected_line = possible_lines.get(0)
+		
+		if selected_lines.has(selected_line):
+			return []
+		
+		selected_lines.append(selected_line)
+		return selected_line
 	
 	return []
 
@@ -55,7 +67,7 @@ func _ready() -> void:
 		cell.cell_pressed.connect(_on_cell_pressed)
 		cell.cell_released.connect(_on_cell_released)
 		
-		var fighter_type_rand = randi() % 3
+		var fighter_type_rand = randi_range(0, 2)
 		match fighter_type_rand:
 			0: cell.fighter = Attacker.new()
 			1: cell.fighter = Defender.new()
